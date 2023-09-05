@@ -19,7 +19,7 @@ app.use(cors({
   credentials:true,
 }));
 
-app.use('https://amazon-clone-frontend-eta.vercel.app/',router)
+app.use('/',router)
 
 const server=http.createServer(app)
 const io=socketIo(server,{cors:{
