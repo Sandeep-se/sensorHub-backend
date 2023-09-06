@@ -19,7 +19,7 @@ app.use(cors({
   credentials:true,
 }));
 
-app.use('/',router)
+app.use('https://amazon-clone-backend-x7dm.onrender.com/',router)
 
 const server=http.createServer(app)
 const io=socketIo(server,{cors:{
