@@ -32,7 +32,7 @@ const signIn=async(req,res)=>
             if(check.password===password)
             {
                 res.cookie('userId', check._id.toString(), {
-                    maxAge: 0, 
+                    maxAge: 900000, 
                     path:"/",
                     httpOnly: true, 
                     secure:true,
