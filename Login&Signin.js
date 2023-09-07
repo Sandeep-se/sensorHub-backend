@@ -32,7 +32,7 @@ const signIn=async(req,res)=>
             if(check.password===password)
             {
                 res.cookie('userId', check._id.toString(), {
-                    maxAge: 900000, 
+                    maxAge: 0, 
                     path:"/",
                     httpOnly: true, 
                     secure:true,
@@ -54,7 +54,12 @@ const signIn=async(req,res)=>
  }
 
 const logout=(req,res)=>{
-    res.clearCookie('userId')
+    res.clearCookie('userId',
+    {
+        path:'/',
+        secure:true,
+        sameSite:'none'
+    })
     res.json('logout success')
   }
  module.exports={signUp,signIn,logout}
