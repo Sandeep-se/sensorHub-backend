@@ -33,7 +33,7 @@ const signIn=async(req,res)=>
             {
                 res.cookie('userId', check._id.toString(), {
                     maxAge: 900000, 
-                    path:'/',
+                    path:'https://amazon-clone-frontend-eta.vercel.app/',
                     httpOnly: true, 
                     secure:true,
                     sameSite:'none'
