@@ -3,6 +3,7 @@ const router=express.Router()
 
 const {signUp,signIn,logout}=require('./Login&Signin')
 const {add,get,del,checkout}=require('./Basket')
+const chat=require('./Chat')
 
 router.get('/',(req,res)=>
 {
@@ -16,5 +17,6 @@ router.post('/add',add)
 router.get('/get',get)
 router.delete('/del/:id',del)
 router.delete('/checkout',checkout)
+router.post('/chat',chat)
 
 module.exports=router

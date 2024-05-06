@@ -11,3 +11,10 @@ mongoose.connect(process.env.DB_API,{
 module.exports=connectDB
 //"mongodb://127.0.0.1:27017/user"
 
+
+// mongoose.connect('mongodb://127.0.0.1:27017/user')
+//     .then(
+//     ()=>{
+//         console.log('connected')
+//     })
+//     .catch(err=>console.log(err))

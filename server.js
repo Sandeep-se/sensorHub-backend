@@ -15,19 +15,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser({path: '/' }));
 app.use(cors({
-  origin:'https://amazon-clone-frontend-eta.vercel.app',
+  origin:'http://localhost:3000',
   credentials:true,
 }));
-
 app.use('/',router)
 
 const server=http.createServer(app)
 const io=socketIo(server,{cors:{
-  origin: 'https://amazon-clone-frontend-eta.vercel.app',
+  origin: 'http://localhost:3000',
   methods:['GET', 'POST'],
   credentials: true
 }})
-
 app.set('socket',io)
 
 io.on('connection',async(socket)=>

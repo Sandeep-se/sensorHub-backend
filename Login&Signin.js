@@ -1,5 +1,6 @@
 const user=require('./model.js')
 const express=require('express')
+const runPromt=require('./chatGpt.js')
 
 const signUp=async(req,res)=>
 {
@@ -25,7 +26,7 @@ const signIn=async(req,res)=>
  {
     const {email,password}=req.body
     const io=req.app.get('socket')
-    try{
+    try{    
         const check=await user.findOne({email})
         if(check)
         {
